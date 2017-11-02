@@ -1,1 +1,36 @@
 
+mkdir -p ~/.vim/autoload ~/.vim/bundle && curl -LsSo ~/.vim/autoload/pathogen.vim https://tpo.pe/pathogen.vim
+cd ~/.vim/bundle && git clone https://github.com/jiangmiao/auto-pairs.git && git clone https://github.com/scrooloose/nerdtree.git
+###############################################auto-pairs for like { } paranthesis auto completion################Nerd tree for navigate between the files as file manager with in vi editor####
+
+################################################
+#  Important to enter into the NERDTree    #####
+#   you need to type  => :NERDTree <=      #####
+################################################
+
+
+
+cd ~/.vim/bundle && git clone https://github.com/ervandew/supertab.git
+############## superb tab is very useful in vi as auto completion #####################################################################
+#to make you of super tab we need to go into cd ~/.vim/bundle/supertab/plugin/supertab.vim and need to press => :source % <= so that the plugin is installed in vim
+
+cd ~/.vim/bundle && git clone https://github.com/scrooloose/syntastic.git
+#####################syntastic it is used by programmers and useful and it helps to catch *syntax errors, missing syntax and basic error tracking in your programs* ###############
+touch ~/.vim/vimrc
+echo -e "execute pathogen#infect()
+syntax on
+filetype plugin indent on
+
+### set number
+set tabstop=4
+set colorcolumn=110
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" > ~/.vim/vimrc
